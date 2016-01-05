@@ -1,0 +1,113 @@
+/* 
+		RandomUsername (Nikola Jovanovic)
+   		powerSpheres 
+*/
+
+body
+{
+	padding: 0;
+	margin: 0;
+	background-color: #1A1A1A;
+	font-family: Verdana;
+	font-size: 12px;
+}
+
+#wrap
+{
+	width: 1200px;
+	padding: 10px;
+	margin: 40px auto;
+	background-color: #E6E6E6;
+	box-shadow: 0px 0px 22px 6px rgba(0,0,0,0.86);
+	border-radius: 10px;
+}
+
+#info
+{
+	margin-bottom: 20px;
+}
+
+#gl-canvas
+{
+	float: left;
+	width: 65%;
+}
+
+#desnideo
+{
+	float: right;
+	width: 33%;
+}
+
+.clear
+{
+	clear: both;
+}
+
+#logo
+{
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#keys
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 70px;
+}
+
+.inline
+{
+	float: left;
+	width: 49%;
+	margin-top: 10px;
+}
+
+.boxnaslov
+{
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 10px;
+	display: block;
+	float: left;
+}
+
+.boxscore
+{
+	font-size: 25px;
+	font-weight: bold;
+	display: inline-block;
+	border-radius: 15px;
+	background-color: #2987F2;
+	box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.76);
+	padding: 10px;
+	float: right;
+}
+
+.keysfont
+{
+	font-size: 23px;
+	font-weight: bold;
+}
+
+#copyright
+{
+
+	text-align: center;
+	padding-top: 130px;
+	font-weight: bold;
+}
+
+.FT
+{
+	width: 90px;
+	display:block;
+	margin:0 auto;
+}
+
+#wsad
+{
+	margin-bottom: 10px;
+}
