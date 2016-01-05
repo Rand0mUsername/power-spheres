@@ -1,0 +1,109 @@
+<!-- RandomUsername (Nikola Jovanovic) -->
+<!-- powerSpheres -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>powerSpheres</title>
+<meta charset="UTF-8">
+
+<!-- vertex shader -->
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute vec4 vPosition;
+
+//each vertex gets a texture coordinate [0, 1]
+attribute vec2 a_texcoord;
+
+//texture coordinate is being mapped for each fragment
+varying vec2 v_texcoord;
+
+uniform mat4 u_proj;
+uniform mat4 u_camera;
+uniform mat4 u_model;
+
+void main()
+{
+	gl_Position = u_proj*u_camera*u_model*vPosition;
+
+	//passing to fragment shader
+	v_texcoord = a_texcoord;
+}
+</script>
+
+<!-- fragment shader -->
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec2 v_texcoord;
+
+uniform sampler2D u_texture;
+
+void main() {
+   gl_FragColor = texture2D(u_texture, v_texcoord);
+}
+</script>
+
+<script type="text/javascript" src="../common/webgl-utils.js"></script>
+<script type="text/javascript" src="../common/initShaders.js"></script>
+<script type="text/javascript" src="../common/MV.js"></script>
+<script type="text/javascript" src="models.js"></script>
+<script type="text/javascript" src="constants.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<!-- Style -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<!-- Design -->
+<body>
+
+<div id="wrap">
+	<canvas id="gl-canvas" width="800" height="800">
+	Failed to initialize WebGL.
+	</canvas>
+
+	<div id="desnideo">
+		<img id="logo" alt="Logo" src="res/logo.png" />
+		<div id="info">
+			<span class="boxnaslov">Power Spheres Collected:</span>
+			<span id="score" class="boxscore"></span>
+			<div class="clear"></div>
+			<br />
+			<span class="boxnaslov">Time Left:</span>
+			<span id="timeleft" class="boxscore"></span>
+			<div class="clear"></div>
+		</div>
+		<div id="keys">
+			
+			<div id="wsad">
+				<img id="WSAD" alt="WSAD" src="res/WSAD.png" />
+				<br>
+				<span class="keysfont">Move</span>
+			</div>
+
+			<div class="inline">
+				<img class="FT" alt="F" src="res/F.png" />
+				<span class="keysfont">Fire</span> 
+
+			</div>
+
+			<div class="inline">
+				<img class="FT" alt="T" src="res/T.png" />
+				<span class="keysfont">Toggle Seasons</span> 
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="copyright">
+			&copy; 2015 RandomUsername - ISP RAČ2
+		</div>
+
+	
+	</div>
+
+	<div class="clear"></div>
+</div>
+</body>
+</html>
